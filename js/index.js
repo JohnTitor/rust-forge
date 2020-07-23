@@ -1,22 +1,33 @@
+/* global moment */
+
 // Rust 1.5.0 was released on 2015-12-10
-var epochDate = moment.utc("2015-12-10");
-var epochRelease = 5;
+const EPOCH_DATE = moment.utc('2015-12-10')
+const EPOCH_RELEASE = 5
+const DATE_FORMAT = 'MMMM Do YYYY'
+const newReleases = Math.floor(moment.utc().diff(EPOCH_DATE, 'weeks') / 6)
 
-var newReleases = Math.floor(moment.utc().diff(epochDate, "weeks") / 6);
+function addRelease (kind, incr, toolsWeek) {
+  const releaseNumber = EPOCH_RELEASE + newReleases + incr
+  const displayVersion = `1.${releaseNumber}`
+  const releaseDate = EPOCH_DATE.clone().add((newReleases + incr) * 6, 'weeks')
 
-function addRelease(kind, incr) {
-    var releaseNumber = epochRelease + newReleases + incr;
-    var releaseDate = epochDate.clone().add((newReleases + incr) * 6, "weeks");
+  document.querySelector(`#${kind}-version`).textContent = displayVersion
+  document.querySelector(`#${kind}-release-date`).textContent = `${releaseDate.format(DATE_FORMAT)} UTC`
 
-    var out = "";
-    out += '<div class="release">';
-    out += '<div class="release-kind">Current ' + kind + '</div>';
-    out += '<div class="release-number">1.' + releaseNumber + '</div>';
-    out += '<div class="release-date">' + releaseDate.format("MMMM Do YYYY") + '</div>';
-    out += '</div>';
-    document.querySelector(".releases").innerHTML += out;
+  if (toolsWeek) {
+    const noBreakagesTo = releaseDate.clone().subtract(6, 'weeks').day(2)
+    const noBreakagesFrom = noBreakagesTo.clone().subtract(6, 'days')
+    const toDate = noBreakagesTo.format(DATE_FORMAT)
+    const fromDate = noBreakagesFrom.format(DATE_FORMAT)
+
+    document.querySelector(`#${kind}-cycle`).textContent = displayVersion
+    document.querySelector(`#${kind}-timespan`).textContent = `${fromDate} → ${toDate}`
+  }
 }
 
-addRelease("stable", 0);
-addRelease("beta", 1);
-addRelease("nightly", 2);
+if (document.querySelector('#current-release-versions')) {
+  addRelease('stable', 0, false)
+  addRelease('beta', 1, false)
+  addRelease('nightly', 2, true)
+  addRelease('next', 3, true)
+}
