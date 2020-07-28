@@ -1287,7 +1287,7 @@ The working group focuses mainly on triaging <code>T-compiler</code> and <code>l
 <h3><a class="header" href="#follow-ups-from-previous-meeting" id="follow-ups-from-previous-meeting">Follow ups from previous meeting</a></h3>
 <ul>
 <li>Remove <a href="https://github.com/rust-lang/rust/labels/I-nominated"><code>I-nominated</code></a> tags of already discussed issues. For that check previous week agenda and Zulip meeting</li>
-<li>Notify <a href="https://rust-lang.zulipchat.com/#narrow/pm-with/116083-user116083">@pnkfelix</a> about accepted <a href="https://github.com/rust-lang/rust/issues?q=is%3Aall+label%3Abeta-nominated+-label%3Abeta-accepted"><code>beta nominated</code></a> and <a href="https://github.com/rust-lang/rust/issues?q=is%3Aall+label%3Astable-nominated+-label%3Astable-accepted"><code>stable nominated</code></a> without <code>beta-accepted</code> and <code>stable-accepted</code> label. For that compare these issues with list meeting's accepted nomations.</li>
+<li>Notify <a href="https://rust-lang.zulipchat.com/#narrow/pm-with/116083-user116083">@pnkfelix</a> about accepted <a href="https://github.com/rust-lang/rust/issues?q=is%3Aall+label%3Abeta-nominated+-label%3Abeta-accepted"><code>beta nominated</code></a> and <a href="https://github.com/rust-lang/rust/issues?q=is%3Aall+label%3Astable-nominated+-label%3Astable-accepted"><code>stable nominated</code></a> without <code>beta-accepted</code> and <code>stable-accepted</code> label. For that compare these issues with list meeting's accepted nominations.</li>
 <li>Notify @pnkfelix about rejected <a href="https://github.com/rust-lang/rust/issues?q=is%3Aall+label%3Abeta-nominated+-label%3Abeta-accepted"><code>beta nominated</code></a> and <a href="https://github.com/rust-lang/rust/issues?q=is%3Aall+label%3Astable-nominated+-label%3Astable-accepted"><code>stable nominated</code></a> still with the nominated label. For that compare these issues with last meeting's rejected nominations.</li>
 <li>Create an empty agenda using <a href="https://hackmd.io/WQW0yzDDS16YvtBNurmj6A">our template</a>, as soon as our Thursday's weekly meeting ends. After creating the meeting change document permissions to Write -&gt; Owners.</li>
 </ul>
@@ -1307,9 +1307,9 @@ The working group focuses mainly on triaging <code>T-compiler</code> and <code>l
 <p>Assigning <code>P-XXX</code> as <a href="compiler/prioritization/link_to_zulip_conversation">discussed as part of the Prioritization Working Group procedure</a> and removing <code>I-prioritize</code>.</p>
 </blockquote>
 <p>The procedure here follows the <a href="compiler/prioritization/procedure.html#General-issues-review-process">General issues review process</a>.</p>
-<p>Note: triagebot automatically creates a topic and notify @<em>WG-prioritization</em> members once an issue is labelled with <code>I-prioritize</code>
-Note #2: These lists should typically be empty when we are close to the meeting.
-Note #3: we should not have unprioritized regressions (<a href="https://github.com/rust-lang/rust/issues?q=is%3Aopen+label%3Aregression-from-stable-to-stable+-label%3AP-critical+-label%3AP-high+-label%3AP-medium+-label%3AP-low+-label%3AT-infra+-label%3AT-libs+-label%3AT-release+-label%3AT-rustdoc">stable</a>, <a href="https://github.com/rust-lang/rust/issues?q=is%3Aopen+label%3Aregression-from-stable-to-beta+-label%3AP-critical+-label%3AP-high+-label%3AP-medium+-label%3AP-low+-label%3AT-infra+-label%3AT-libs+-label%3AT-release+-label%3AT-rustdoc">beta</a> and <a href="https://github.com/rust-lang/rust/issues?q=is%3Aopen+label%3Aregression-from-stable-to-nightly+-label%3AP-critical+-label%3AP-high+-label%3AP-medium+-label%3AP-low+-label%3AT-infra+-label%3AT-libs+-label%3AT-release+-label%3AT-rustdoc">nightly</a>) and ideally regressions should have an assignee.</p>
+<p>Note: triagebot automatically creates a topic and notify @<em>WG-prioritization</em> members once an issue is labelled with <code>I-prioritize</code></p>
+<p>Note #2: These lists should typically be empty when we are close to the meeting.</p>
+<p>Note #3: we should not have unprioritized regressions (<a href="https://github.com/rust-lang/rust/issues?q=is%3Aopen+label%3Aregression-from-stable-to-stable+-label%3AP-critical+-label%3AP-high+-label%3AP-medium+-label%3AP-low+-label%3AT-infra+-label%3AT-libs+-label%3AT-release+-label%3AT-rustdoc">stable</a>, <a href="https://github.com/rust-lang/rust/issues?q=is%3Aopen+label%3Aregression-from-stable-to-beta+-label%3AP-critical+-label%3AP-high+-label%3AP-medium+-label%3AP-low+-label%3AT-infra+-label%3AT-libs+-label%3AT-release+-label%3AT-rustdoc">beta</a> and <a href="https://github.com/rust-lang/rust/issues?q=is%3Aopen+label%3Aregression-from-stable-to-nightly+-label%3AP-critical+-label%3AP-high+-label%3AP-medium+-label%3AP-low+-label%3AT-infra+-label%3AT-libs+-label%3AT-release+-label%3AT-rustdoc">nightly</a>) and ideally regressions should have an assignee.</p>
 <h4><a class="header" href="#accept-mcps" id="accept-mcps">Accept MCPs</a></h4>
 <p>Accept all <a href="https://github.com/rust-lang/compiler-team/issues?q=is%3Aissue+is%3Aopen+label%3Amajor-change+label%3Afinal-comment-period">MCPs that have been on <code>final-comment-period</code></a> for 10 or more days. Basically check that <code>final-comment-period</code> label was added more than 10 days ago.
 To accept, remove <code>final-comment-period</code>, add <code>major-change-accepted</code> and close the issue.</p>
@@ -1482,6 +1482,9 @@ discussion; it is also possible to use both weeks to discuss the same
 topic, if that topic is complex. <strong>Week 4 is reserved for
 non-technical topics</strong>, so as to ensure that we are keeping an eye on
 the overall health and functioning of the team.</p>
+<h3><a class="header" href="#where-do-proposals-come-from" id="where-do-proposals-come-from">Where do proposals come from?</a></h3>
+<p>The team accepts proposals via an open submission process,
+which is documented on <a href="compiler/steering-meeting/submit.html">its own page</a></p>
 <h2><a class="header" href="#announcing-the-schedule" id="announcing-the-schedule">Announcing the schedule</a></h2>
 <p>After each planning meeting, the topics for the next three weeks are
 added to the <a href="https://rust-lang.github.io/compiler-team/#meeting-calendar">compiler-team meeting calendar</a> and a blog post is
@@ -4492,8 +4495,8 @@ compiled, but for others <code>rustc</code> and <code>cargo</code> are too.</li>
 <tr><td><code>mipsel-unknown-linux-gnu</code></td><td>✓</td><td>✓</td><td>✓</td><td>MIPS (LE) Linux (kernel 4.4, glibc 2.23)</td></tr>
 <tr><td><code>mipsel-unknown-linux-musl</code></td><td>✓</td><td></td><td></td><td>MIPS (LE) Linux with MUSL</td></tr>
 <tr><td><code>nvptx64-nvidia-cuda</code></td><td>✓</td><td></td><td></td><td>--emit=asm generates PTX code that <a href="https://github.com/japaric-archived/nvptx#targets">runs on NVIDIA GPUs</a></td></tr>
-<tr><td><code>powerpc-unknown-linux-gnu</code></td><td>✓</td><td>✓</td><td>✓</td><td>PowerPC Linux (kernel 2.6.32, glibc 2.12)</td></tr>
-<tr><td><code>powerpc64-unknown-linux-gnu</code></td><td>✓</td><td>✓</td><td>✓</td><td>PPC64 Linux (kernel 2.6.32, glibc 2.12)</td></tr>
+<tr><td><code>powerpc-unknown-linux-gnu</code></td><td>✓</td><td>✓</td><td>✓</td><td>PowerPC Linux (kernel 2.6.32, glibc 2.11)</td></tr>
+<tr><td><code>powerpc64-unknown-linux-gnu</code></td><td>✓</td><td>✓</td><td>✓</td><td>PPC64 Linux (kernel 2.6.32, glibc 2.11)</td></tr>
 <tr><td><code>powerpc64le-unknown-linux-gnu</code></td><td>✓</td><td>✓</td><td>✓</td><td>PPC64LE Linux (kernel 3.10, glibc 2.17)</td></tr>
 <tr><td><code>riscv32i-unknown-none-elf</code></td><td>*</td><td></td><td></td><td>Bare RISC-V (RV32I ISA)</td></tr>
 <tr><td><code>riscv32imac-unknown-none-elf</code></td><td>*</td><td></td><td></td><td>Bare RISC-V (RV32IMAC ISA)</td></tr>
@@ -4501,7 +4504,7 @@ compiled, but for others <code>rustc</code> and <code>cargo</code> are too.</li>
 <tr><td><code>riscv64gc-unknown-linux-gnu</code></td><td>✓</td><td>✓</td><td>✓</td><td>RISC-V Linux (kernel 4.20, glibc 2.29)</td></tr>
 <tr><td><code>riscv64gc-unknown-none-elf</code></td><td>*</td><td></td><td></td><td>Bare RISC-V (RV64IMAFDC ISA)</td></tr>
 <tr><td><code>riscv64imac-unknown-none-elf</code></td><td>*</td><td></td><td></td><td>Bare RISC-V (RV64IMAC ISA)</td></tr>
-<tr><td><code>s390x-unknown-linux-gnu</code></td><td>✓</td><td>✓</td><td>✓</td><td>S390x Linux (kernel 2.6.32, glibc 2.12)</td></tr>
+<tr><td><code>s390x-unknown-linux-gnu</code></td><td>✓</td><td>✓</td><td>✓</td><td>S390x Linux (kernel 2.6.32, glibc 2.11)</td></tr>
 <tr><td><code>sparc64-unknown-linux-gnu</code></td><td>✓</td><td></td><td></td><td>SPARC Linux (kernel 4.4, glibc 2.23)</td></tr>
 <tr><td><code>sparcv9-sun-solaris</code></td><td>✓</td><td></td><td></td><td>SPARC Solaris 10/11, illumos</td></tr>
 <tr><td><code>thumbv6m-none-eabi</code></td><td>*</td><td></td><td></td><td>Bare Cortex-M0, M0+, M1</td></tr>
@@ -4660,15 +4663,8 @@ our URL is then https://dev-static.rust-lang.org/dist/2015-09-17/index.html.</p>
 <p>If something goes wrong, and we rebuild stable artifacts, you'll need to
 invalidate the dev-static bucket for RCS to re-release it.</p>
 <ol>
-<li>Download https://dev-static.rust-lang.org/dist/channel-rust-1.35.0.toml The
-version number must be less than the current release, but otherwise doesn't
-matter.</li>
-<li>Rename the file locally to channel-rust-stable.toml</li>
-<li>Upload the file to the dev-static bucket into the dist folder, replacing
-channel-rust-stable.toml.</li>
-<li>Go to CloudFront in AWS, to the dev-static bucket, and issue an invalidation
-for &quot;/dist/channel-rust-stable.toml&quot;. This is necessary until
-https://github.com/rust-lang/rust-central-station/issues/49 is fixed.</li>
+<li>Obtain AWS credentials (i.e., <code>aws-creds.py</code> from <code>rust-lang/simpleinfra</code>).</li>
+<li>Run the <code>invalidate-dev-static-stable.sh</code> script in <code>rust-lang/simpleinfra</code>.</li>
 <li>(optional) login to central station, and run the following. This starts the
 dev-static promotion immediately, vs. waiting till the next hour.</li>
 </ol>
